@@ -66,17 +66,35 @@ public class Universidad{
 	public static void main(String[] args) {
 		
 		Universidad facu = new Universidad("UNGS");
-	
+		
 		Materia IntroMate = new Materia ("Introduccion a la matematica",10,2);
 		Materia Programacion1 = new Materia ("Programacion 1",12,2);
-		Materia Orga1 = new Materia ("Organizacion del Computador 1",11,2);
+		Materia Orga1 = new Materia ("Organizacion del Computador 1",11,1);
 		Materia TODO = new Materia ("Trollface",8,12);
+		
+		MateriaJSON ofertaAcademica = new MateriaJSON();
+		
+		ofertaAcademica.addCoord(IntroMate);
+		ofertaAcademica.addCoord(Programacion1);
+		ofertaAcademica.addCoord(TODO);
+		ofertaAcademica.addCoord(Orga1);
 		
 		facu.agregarMateria(IntroMate);
 		facu.agregarMateria(Programacion1);
 		facu.agregarMateria(Orga1);
 		facu.agregarMateria(TODO);
 		
+		for (int x=0; x<ofertaAcademica.tamaño(); x++)
+			System.out.println(ofertaAcademica.dame(x).toString());
+		
+		ofertaAcademica.ordenar();
+		
+		System.out.println("");
+		
+		for (int x=0; x<ofertaAcademica.tamaño(); x++)
+			System.out.println(ofertaAcademica.dame(x).toString());
+		
+		System.out.println("");
 		
 		System.out.println(facu.verFacultad());
 		
