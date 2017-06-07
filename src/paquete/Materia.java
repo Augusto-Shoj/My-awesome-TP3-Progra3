@@ -24,6 +24,16 @@ public class Materia {
 	
 	 public int getHoraFinal(){
 		 return (horaInicio + duracion);}
+	 
+	 public int calificacion(){
+		 return this.duracion;}
+	 
+	 @Override
+	 public String toString(){
+		return "Materia: " + this.getNombreMateria() + " - Arranca: " + this.getHoraInicio() 
+		+ ":00 hs, Termina : " + this.getHoraFinal() + ":00 hs.";
+	}
+	 
 
 
 
